@@ -52,10 +52,11 @@
     </header>
     
     <ul>
-        <li><a href="https://aws-link1.com" target="_blank">Praca 1</a></li>
-        <li><a href="https://aws-link2.com" target="_blank">Praca 2</a></li>
+        <li><a href="zad1.html" target="_blank">Praca 1</a></li>
+        <li><a href="zad2.html" target="_blank">Praca 2</a></li>
         <li><a href="https://aws-link3.com" target="_blank">Praca 3</a></li>
         <!-- Dodaj więcej linków, jeśli potrzebujesz -->
     </ul>
 </body>
 </html>
+
