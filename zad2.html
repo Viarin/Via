@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розташування textу</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .container {
+            width: 300px; /* Ширина контейнера для блоків */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .block {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            height: 30px;
+        }
+        /* Різні варіанти ширини блоків */
+        .wide {
+            grid-column: span 3;
+            height: 30px;
+        }
+        .medium {
+            grid-column: span 2;
+            height: 30px;
+        }
+        .short {
+            grid-column: span 1;
+            height: 30px;
+        }
+        /* Стиль для двох половин на 7-9 ряд */
+        .half {
+            display: flex;
+            justify-content: space-between;
+            grid-column: span 3;
+            height: 100px; /* Висота блоку для 7-9 рядка */
+        }
+        .left-half, .right-half {
+            width: 48%; /* Половина ширини контейнера */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Верхній ряд -->
+        <div class="block short">text 1</div>
+        <div class="block short">text 2</div>
+        <div class="block short">text 3</div>
+
+        <!-- Другий ряд -->
+        <div class="block short">text 4</div>
+        <div class="block short">text 5</div>
+        <div class="block short">text 6</div>
+
+        <!-- Третій ряд -->
+        <div class="block short">text 7</div>
+        <div class="block short">text 8</div>
+        <div class="block short">text 9</div>
+
+        <!-- Четвертий ряд (широкі блоки) -->
+        <div class="block wide">text 9</div>
+        <div class="block wide">text 10</div>
+        <div class="block wide">text 11</div>
+
+        <!-- П'ятий ряд (менші блоки) -->
+        <div class="block short">text 12</div>
+        <div class="block short">text 13</div>
+        <div class="block short">text 14</div>
+
+        <!-- Шостий ряд -->
+        <div class="block short">text 15</div>
+        <div class="block short">text 16</div>
+        <div class="block short">text 17</div>
+
+        <!-- Сьомий - дев'ятий ряд (поділений на дві половини) -->
+        <div class="half">
+            <div class="left-half">
+                <div class="block">text 18</div>
+                <div class="block">text 19</div>
+                <div class="block">text 20</div>
+            </div>
+            <div class="right-half">
+                <div class="block">text 21</div>
+                <div class="block">text 22</div>
+                <div class="block">text 23</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
