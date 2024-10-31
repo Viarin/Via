@@ -1,106 +1,104 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розташування textу</title>
+    <title>Three Columns Layout</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f9;
-            margin: 0;
+        .mycontainer1 {
+            width: 100%;
+            overflow: auto;
         }
-        .container {
-            width: 300px; /* Ширина контейнера для блоків */
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-        .block {
-            border: 2px solid black;
+        .mycontainer1 div {
+            width: 33%;
+            float: left;
             padding: 10px;
-            text-align: center;
-            font-size: 14px;
-            height: 30px;
+            box-sizing: border-box;
         }
-        /* Різні варіанти ширини блоків */
-        .wide {
-            grid-column: span 3;
-            height: 30px;
+
+        .mycontainer2 {
+            width: 100%;
+            overflow: auto;
         }
-        .medium {
-            grid-column: span 2;
-            height: 30px;
+        .mycontainer2 div {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
         }
-        .short {
-            grid-column: span 1;
-            height: 30px;
+
+        .mycontainer3 {
+            width: 100%;
+            overflow: auto;
         }
-        /* Стиль для двох половин на 7-9 ряд */
-        .half {
-            display: flex;
-            justify-content: space-between;
-            grid-column: span 3;
-            height: 100px; /* Висота блоку для 7-9 рядка */
+        .mycontainer3 div {
+            width: 25%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
         }
-        .left-half, .right-half {
-            width: 48%; /* Половина ширини контейнера */
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+
+        .mycontainer4 {
+            width: 100%;
+            overflow: auto;
+        }
+        .mycontainer4 div {
+            width: 50%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Clearfix for floating elements */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Верхній ряд -->
-        <div class="block short">text 1</div>
-        <div class="block short">text 2</div>
-        <div class="block short">text 3</div>
-
-        <!-- Другий ряд -->
-        <div class="block short">text 4</div>
-        <div class="block short">text 5</div>
-        <div class="block short">text 6</div>
-
-        <!-- Третій ряд -->
-        <div class="block short">text 7</div>
-        <div class="block short">text 8</div>
-        <div class="block short">text 9</div>
-
-        <!-- Четвертий ряд (широкі блоки) -->
-        <div class="block wide">text 9</div>
-        <div class="block wide">text 10</div>
-        <div class="block wide">text 11</div>
-
-        <!-- П'ятий ряд (менші блоки) -->
-        <div class="block short">text 12</div>
-        <div class="block short">text 13</div>
-        <div class="block short">text 14</div>
-
-        <!-- Шостий ряд -->
-        <div class="block short">text 15</div>
-        <div class="block short">text 16</div>
-        <div class="block short">text 17</div>
-
-        <!-- Сьомий - дев'ятий ряд (поділений на дві половини) -->
-        <div class="half">
-            <div class="left-half">
-                <div class="block">text 18</div>
-                <div class="block">text 19</div>
-                <div class="block">text 20</div>
-            </div>
-            <div class="right-half">
-                <div class="block">text 21</div>
-                <div class="block">text 22</div>
-                <div class="block">text 23</div>
-            </div>
-        </div>
+<div class="mycontainer1 clearfix">
+    <div>
+        <p>Column 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
     </div>
+    <div>
+        <p>Column 2: Donec aliquet, urna non tempor fringilla, metus erat consequat magna, vel scelerisque elit nisl quis sapien. Nulla facilisi. Vivamus ac magna in mauris viverra pharetra. Nulla fermentum purus eu orci vestibulum, at pharetra lectus viverra.</p>
+    </div>
+    <div>
+        <p>Column 3: Integer at lacus vel massa gravida fermentum. Cras eget velit vitae libero feugiat elementum nec nec metus. Sed congue magna non justo eleifend, nec ultricies libero mollis. Vivamus ut est at libero vulputate posuere. Morbi eget ultricies neque.</p>
+    </div>
+</div>
+
+<div class="mycontainer2 clearfix">
+    <div>
+        <p>Column 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+</div>
+
+<div class="mycontainer3 clearfix">
+    <div>
+        <p>Column 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+    <div>
+        <p>Column 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+    <div>
+        <p>Column 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+    <div>
+        <p>Column 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+</div>
+
+<div class="mycontainer4 clearfix">
+    <div>
+        <p>Column 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.</p>
+    </div>
+    <div>
+        <p>Column 2: Donec aliquet, urna non tempor fringilla, metus erat consequat magna, vel scelerisque elit nisl quis sapien. Nulla facilisi. Vivamus ac magna in mauris viverra pharetra. Nulla fermentum purus eu orci vestibulum, at pharetra lectus viverra.</p>
+    </div>
+</div>
 
 </body>
 </html>
